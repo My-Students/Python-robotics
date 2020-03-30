@@ -1,14 +1,15 @@
 #Shekhawat Karni 
 #03/04/2020
-def matrixBorn():  #Creo matrice boolena inizializzata a True
+def matrixBorn():  #Creo matrice inizializzata a -1
     l = int(input("What's the lenth of the matrix ? \n"))
 
     matrix = []
 
-    for i in range(0, len(l)):
-        line = []
-        for j in range(0, len(v)):
-            line.append(True)
+    for i in range(0, l):
+       line = []
+
+        for j in range(0, l):
+            line.append(-1)
       
        matrix.append(line) 
     
@@ -22,23 +23,53 @@ def fillTabel(m): #Faccio caricare la matrice liberando blocchi indiati dei nodi
         cordx = int(input(f"Insert the x cordinates of the {i}  node : \n"))
         cordy = int(input(f"Insert the y cordinates of the {i}  node : \n"))
 
-        m[cordx][cordy] = False
+        m[cordx][cordy] = i #False
     
     return m
 
-"""
-def contVicini(m):
-    d = {}
-    cont = 0
+
+
+def trovoVicini(m):
+    vicini = []
     for i in range(len(m)):
         for k in range(len(m)):
+            near = []
+            if(m[i][k] > 0 ):
+                if(m[i][k-1] > 0):
+                    near.append(m[i][k-1])
+                if(m[i][k+1] > 0 ):
+                    near.append[m[i][k+1]]
+                if(m[i+1][k] > 0):
+                    near.append(m[i+1][k])
+                if(m[i-1][k] > 0):
+                    near.append(m[i-1][k])
             
-            if(m[i][k] == False & m[i][k+1] == False| m[i+1][k] == False):
-                d{cont} = 
+            vicini.append(near)
+    
+    return vicini
+    
 
+            
+            
+                    
+            
+        
 
-"""
 
 if __name__ == "__main__":
     matrix=matrixBorn()
-    fillTabel(matrix)
+    print(trovoVicini(fillTabel(matrix)))
+    
+
+
+"""
+grid = [[True, True, True, True, True, False],
+        [False, False, True, True, True, False],
+        [True, True, True, False, True, True],
+        [True, False, False, True, True, False],
+        [True, True, True, True, False, True],
+        [True, False, True, True, True, False]]
+
+        """
+
+
